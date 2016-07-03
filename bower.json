@@ -20,7 +20,5 @@
   ],
   "dependencies": {
     "bootstrap-sass": "~3.3.6",
-    "octicons": "^4.2.0",
-    "modernizr": "^3.3.1"
-  }
+    "octicons": "^4.2.0"
 }
