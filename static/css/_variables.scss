@@ -3,6 +3,18 @@ $bootstrap-sass-asset-helper: false !default;
 // Variables
 // --------------------------------------------------
 
+$main-font: "Raleway", sans-serif;
+$code-font: "Source Code Pro", monospace;
+
+$accent-colour: #ffc107;
+$red-a100: #ff8a80;
+
+$social-icons: (
+	"twitter" #55acee,
+	"google-plus-square" #dd4b39,
+	"github" #171515,
+	"soundcloud" #f70,
+);
 
 //== Colors
 //

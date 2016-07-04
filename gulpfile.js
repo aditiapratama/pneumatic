@@ -7,6 +7,7 @@ var csswring      = require('csswring');
 var autoprefixer  = require('autoprefixer');
 var notify        = require('gulp-notify');
 var plumber       = require('gulp-plumber');
+var uglify        = require('gulp-uglify');
 var jshint        = require('gulp-jshint');
 
 var config = {
@@ -26,7 +27,7 @@ gulp.task('css', function() {
     csswring,
     autoprefixer({browsers:['last 2 version']})
   ];
-  return gulp.src('./static/css/main.scss')
+  return gulp.src('./static/css/*.scss')
   .pipe(plumber(plumberErrorHandler))
   .pipe(sass({
       includePaths: [config.bootstrapDir + '/assets/stylesheets'],
@@ -66,10 +67,10 @@ gulp.task('compress',function(){
 
 gulp.task('watch',function(){
   gulp.watch(config.publicDir + '/css/main.scss',['css']);
-  gulp.watch(config.publicDir + '/js/*.js',['js']);
+  // gulp.watch(config.publicDir + '/js/*.js',['js']);
   gulp.watch(config.publicDir + '/js/main.js',['compress']);;
 })
 
-gulp.task('serve', ['css','fonts', 'jquery', 'compress', 'watch']);
+gulp.task('serve', ['css','fonts', 'jquery', 'watch']);
 
 gulp.task('default', ['serve']);

@@ -12,7 +12,7 @@
 	{% block meta %}{% endblock %}
 
 	<!-- Stylesheets and Web Fonts -->
-	{% assets filters="scss, cssmin", output="style.min.css", "pneumatic.scss", "pygments.css" %}
+	{% assets filters="scss, cssmin", output="style.min.css", "main.css", "pygments.css" %}
 	<link href="/{{ ASSET_URL }}" rel="stylesheet">
 	{% endassets %}
 	{% if GOOGLE_FONTS %}
@@ -48,7 +48,7 @@
 
 <body>
 	<div class="container">
-		<aside>
+		<aside class-"col-md-4">
 			<a href="/"><img id="avatar" alt="Site Avatar" src="/{{ ICONS_PATH }}/avatar.png"></a>
 			<div id="name"><a href="/">{{ SITENAME }}</a></div>
 			<div id="bio">{{ BIO_TEXT }}</div>
@@ -70,7 +70,7 @@
 			<hr id="sidebar-divider">
 		</aside>
 
-		<article>
+		<article class="col-md-8">
 			{% block content %}{% endblock %}
 			<hr>
 		</article>
