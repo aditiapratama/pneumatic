@@ -48,8 +48,9 @@
 
 <body>
 	<div class="container">
-		<aside class-"col-md-4">
-			<a href="/"><img id="avatar" alt="Site Avatar" src="/{{ ICONS_PATH }}/avatar.png"></a>
+		<div class="row">
+		<aside>
+			<a href="/"><img id="avatar" alt="Site Avatar" src="/{{ ICONS_PATH }}/aditia_mugshot.jpg"></a>
 			<div id="name"><a href="/">{{ SITENAME }}</a></div>
 			<div id="bio">{{ BIO_TEXT }}</div>
 
@@ -70,7 +71,7 @@
 			<hr id="sidebar-divider">
 		</aside>
 
-		<article class="col-md-8">
+		<article>
 			{% block content %}{% endblock %}
 			<hr>
 		</article>
@@ -79,6 +80,7 @@
 			<p>{{ FOOTER_TEXT }}</p>
 		</footer>
 	</div>
+</div>
 
 	<script src="/theme/js/jquery.min.js" charset="utf-8"></script>
 	<script src="/theme/js/main.js" charset="utf-8"></script>

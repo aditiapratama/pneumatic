@@ -8,6 +8,9 @@ $code-font: "Source Code Pro", monospace;
 
 $accent-colour: #ffc107;
 $red-a100: #ff8a80;
+$dark-primary-color: #455a64;
+$primary-color: #607d8b;
+$light-primary-color: #cfd8dc;
 
 $social-icons: (
 	"twitter" #55acee,
@@ -15,6 +18,10 @@ $social-icons: (
 	"github" #171515,
 	"soundcloud" #f70,
 );
+
+$desktop: "only screen and (min-width: 960px)";
+$handheld: "only screen and (max-width: 959px)";
+$mobile: "only screen and (max-width: 767px)";
 
 //== Colors
 //
