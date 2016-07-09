@@ -21,4 +21,5 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.6",
     "octicons": "^4.2.0"
+  }
 }
