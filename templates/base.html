@@ -53,11 +53,19 @@
 				<li class="sidebar-brand">
 					<a href="/">
 						<img id="avatar" alt="Site Avatar" src="/{{ ICONS_PATH }}/aditia_mugshot.jpg">
-						<div id="name"><a href="/">{{ SITENAME }}</a></div>
-						<div id="bio">{{ BIO_TEXT }}</div>
 					</a>
-				</li>
-				<li>
+					<div id="name"><a href="/">{{ SITENAME }}</a></div>
+					<div id="bio">{{ BIO_TEXT }}</div>
+
+					{% if SOCIAL_ICONS %}
+
+					<div id="social">
+					{% for link, title, icon in SOCIAL_ICONS %}
+						<a href="{{ link }}" title="{{ title }}" class="icon fa {{ icon }}"></a>
+						{% endfor %}
+					</div>
+
+					{% endif %}
 
 					{% if SIDEBAR_LINKS %}
 
@@ -67,33 +75,21 @@
 
 					{% endif %}
 
-				</li>
-				<li>
-
-					{% if SOCIAL_ICONS %}
-
-					<div id="social">
-						{% for link, title, icon in SOCIAL_ICONS %}
-						<a href="{{ link }}" title="{{ title }}" class="icon fa {{ icon }}"></a>
-						{% endfor %}
-					</div>
-
-					{% endif %}
-
-				</li>
-				<li>
 					<hr id="sidebar-divider">
 				</li>
 			</ul>
+		</div>
+
+		<div id="menu-toggle">
+			<a href="#menu-toggle">
+				<span class="octicon octicon-list-unordered"></span>
+			</a>
 		</div>
 
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-							<span class="octicon octicon-list-unordered"></span>
-						</a>
 				<!-- <aside>
 					<a href="/"><img id="avatar" alt="Site Avatar" src="/{{ ICONS_PATH }}/aditia_mugshot.jpg"></a>
 					<div id="name"><a href="/">{{ SITENAME }}</a></div>

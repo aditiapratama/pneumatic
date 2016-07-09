@@ -85,25 +85,25 @@ hr {
 }
 
 a {
-	color: #333;
+	color: $gray-darker;
 	text-decoration: none;
 	font-weight: bold;
 	outline: 0;
 
 	&:hover, &:focus {
-		color: #000;
+		color: $gray-dark;
 		text-decoration: underline;
 	}
 
 	&.icon {
 		padding: 0 2px;
 		font-size: 20px;
-		color: #555;
+		color: $light-primary-color;
 		transition: color 0.25s ease;
 
 		&:hover {
 			text-decoration: none;
-			color: #222;
+			color: $gray-lighter;
 			@each $icon, $colour in $social-icons {
 				&.fa-#{$icon} { color: $colour; }
 			}
@@ -207,20 +207,17 @@ html, body {
 
 #wrapper {
 	padding-left: 0;
-	transition: all 0.5s ease;
-	-webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
 
 	&.toggled {
-	  padding-left: 250px;
+	  padding-left: -25%;
 
 		#sidebar-wrapper {
-		    width: 250px;
+		  width: 25%;
 		}
 
 		#page-content-wrapper {
-	    position: absolute;
-	    margin-right: -250px;
+			width: 75%;
+			left: 25%;
 		}
 	}
 }
@@ -228,64 +225,102 @@ html, body {
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
-    width: 0;
     height: 100%;
-    margin-left: -250px;
     overflow-y: auto;
-    background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    background: $dark-primary-color;
 }
 
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
+    padding: 25px 20px;
+		margin: 0 auto;
+
 }
+
+#menu-toggle{
+		text-align: right;
+		position: relative;
+		display: block;
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+		border-width: 0;
+		outline: none;
+		border-radius: 2px;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+		background-color: $primary-color;
+		color: $gray-lighter;
+		transition: background-color .3s;
+		&:hover, &:focus {
+			background-color: $dark-primary-color;
+			span {
+				color: $accent-colour;
+			}
+		}
+		& > * {
+			position: relative;
+		}
+		span {
+			display: block;
+			padding: 12px 24px;
+			color: $gray-lighter;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: block;
+			width: 0;
+			padding-top: 0;
+			border-radius: 100%;
+			background-color: rgba(236, 240, 241, .3);
+			transform: translate(-50%, -50%);
+		}
+		&:active:before {
+			width: 120%;
+			padding-top: 120%;
+			transition: width .2s ease-out, padding-top .2s ease-out;
+		}
+}
+
 
 /* Sidebar Styles */
 
 .sidebar-nav {
     position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
+    top: 50px;
+    padding: 0 25px;
     list-style: none;
+		text-align: center;
 
 		li {
-		  text-indent: 20px;
 		  line-height: 40px;
 
 			a {
-				// display: block;
 		    text-decoration: none;
-		    color: #999999;
+				color: $gray-lighter;
 
 				&:hover {
 					text-decoration: none;
-			    color: #fff;
-			    background: rgba(255,255,255,0.2);
+					color: $accent-colour;
 				}
 				&:active, &:focus {
 					text-decoration: none;
+					color: $gray-light;
 				}
 			}
 		}
 	}
 
 .sidebar-nav > .sidebar-brand {
-	  height: 65px;
 	  font-size: 18px;
 	  line-height: 60px;
 
 		a {
-			color: #999999;
 
 			&:hover {
-				color: #fff;
 		    background: none;
 			}
 		}
@@ -342,7 +377,7 @@ aside {
 #avatar {
 	margin: 0 auto;
 	// display: block;
-	width: 140px;
+	width: 128px;
 	border-radius: 50%;
 }
 
@@ -350,15 +385,21 @@ aside {
 	font-size: 1.8em;
 	line-height: 1.35;
 	letter-spacing: -0.5px;
+	color: $gray-lighter;
 }
 
 #bio {
 	font-size: 0.85em;
 	line-height: 1.5;
+	color: $gray-lighter
+}
+
+#social {
+	letter-spacing: 10px;
 }
 
 #sidebar-links {
-	color: #aaa;
+	color: $gray-light;
 }
 
 #sidebar-divider {
@@ -408,6 +449,35 @@ aside {
 		width: 90%;
 	}
 
+	#wrapper {
+		padding-left: 0;
+		&.toggled {
+			padding-left: -50%;
+
+			#sidebar-wrapper {
+					width: 0;
+			}
+
+			#page-content-wrapper {
+					position: relative;
+					margin: 0 auto;
+					width: 90%;
+					left: 0;
+			}
+		}
+	}
+
+	#sidebar-wrapper {
+			width: 50%;
+	}
+
+	#page-content-wrapper {
+			padding: 20px;
+			position: relative;
+			width: 90%;
+			left: 50%;
+	}
+
 	aside {
 		max-width: 280px;
 		margin: 0 auto;
@@ -433,9 +503,9 @@ aside {
 	#sidebar-divider { display: block; }
 
 	#wrapper {
-		padding-left: 250px;
+		padding-left: 0;
 		&.toggled {
-			padding-left: 0;
+			padding-left: -80%;
 
 			#sidebar-wrapper {
 					width: 0;
@@ -443,18 +513,22 @@ aside {
 
 			#page-content-wrapper {
 					position: relative;
-					margin-right: 0;
+					margin: 0 auto;
+					width: 100%;
+					left: 0;
 			}
 		}
 	}
 
 	#sidebar-wrapper {
-			width: 250px;
+			width: 80%;
 	}
 
 	#page-content-wrapper {
 			padding: 20px;
 			position: relative;
+			width: 100%;
+			left: 80%;
 	}
 }
 
