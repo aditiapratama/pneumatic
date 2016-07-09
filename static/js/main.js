@@ -1,1 +1,1 @@
-console.log("Pneumatic-Bootstrap initial");
+console.log("Pneumatic-Bootstrap initial"),$("#menu-toggle").click(function(e){e.preventDefault(),$("#wrapper").toggleClass("toggled")});
