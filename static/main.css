@@ -6940,14 +6940,22 @@ ul {
 ol {
   list-style: decimal; }
 
-table:not(.codehilitetable) th, table:not(.codehilitetable) td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #e1e1e1; }
-  table:not(.codehilitetable) th:first-child, table:not(.codehilitetable) td:first-child {
-    padding-left: 0; }
-  table:not(.codehilitetable) th:last-child, table:not(.codehilitetable) td:last-child {
-    padding-right: 0; }
+table:not(.codehilitetable) {
+  width: 100%; }
+  table:not(.codehilitetable) th {
+    text-align: center;
+    background-color: #333333;
+    color: #eeeeee;
+    height: 50px; }
+  table:not(.codehilitetable) td {
+    text-align: left; }
+  table:not(.codehilitetable) th, table:not(.codehilitetable) td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e1e1e1; }
+    table:not(.codehilitetable) th:first-child, table:not(.codehilitetable) td:first-child {
+      padding-left: 15px; }
+    table:not(.codehilitetable) th:last-child, table:not(.codehilitetable) td:last-child {
+      padding-right: 0; }
 
 abbr, acronym, .abbr {
   cursor: help;
@@ -7132,7 +7140,11 @@ aside {
 #avatar {
   margin: 0 auto;
   width: 128px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  border: 2px solid #eeeeee;
+  padding: 3px;
+  vertical-align: top;
+  display: inline-block; }
 
 #name {
   font-size: 1.8em;
