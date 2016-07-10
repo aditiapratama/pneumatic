@@ -6980,7 +6980,7 @@ code {
   font: 0.85em/1.5 "Source Code Pro", monospace;
   overflow-x: auto;
   display: block;
-  border-left: 3px solid #ffc107;
+  border-left: 3px solid #607d8b;
   border-radius: 2px;
   padding: 0.8em 0; }
   .codehilitetable tbody tr {
@@ -7104,10 +7104,11 @@ html, body {
     background: none; }
 
 .container {
-  position: relative;
-  width: 900px;
-  margin: 0 auto;
-  padding-top: 50px; }
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 article {
   padding: 25px;
