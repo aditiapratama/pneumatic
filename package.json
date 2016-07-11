@@ -26,9 +26,11 @@
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "autoprefixer-core": "^6.0.1",
+    "cssnano": "^3.7.1",
     "csswring": "^5.1.0",
     "gulp": "^3.9.1",
     "gulp-bower": "^0.0.13",
+    "gulp-cssnano": "^2.1.2",
     "gulp-jshint": "^2.0.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
