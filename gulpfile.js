@@ -52,7 +52,8 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('pygments', function () {
-  return gulp.src([config.publicDir + '/pygments/*.css','!.static/pygments/*min.css'])
+  return gulp.src([config.publicDir + '/pygments/*.css', '!' + config
+  .publicDir + '/pygments/*min.css'])
     .pipe(minify())
     .pipe(rename({
       extname: '.min.css'

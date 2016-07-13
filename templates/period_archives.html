@@ -19,5 +19,15 @@
 		{% endfor %}
 	{% endfor %}
 	</div>
-	<div id="back-to-home"><a href="/">&laquo; Back to Home</a></div>
+	<div id="back-to-home">
+		<a href="/">
+			<span id="period_archives-back-home">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+					<i class="material-icons" role="presentation">home</i>
+				</button>
+			</span>
+			<span class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" for="period_archives-back-home">Back to Home</span>
+			&laquo; Back to Home
+		</a>
+	</div>
 {% endblock %}

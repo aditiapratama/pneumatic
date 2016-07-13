@@ -21,5 +21,15 @@
 		</div>
 		{% if not loop.last %}<br>{% endif %}
 	{% endfor %}
-	<div id="view-archives"><a href="/archive/">Older Posts &raquo;</a></div>
+	<div id="view-archives">
+		<!-- <a href="/archive/">Older Posts &raquo;</a> -->
+		<a href="/archive/">
+			<span id="more">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+					<i class="material-icons" role="presentation">arrow_forward</i>
+				</button>
+			</span>
+			<span class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left" for="more">Older Post</span>
+		</a>
+	</div>
 {% endblock %}

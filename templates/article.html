@@ -26,10 +26,26 @@
 	{% if article.next_article or article.prev_article %}
 	<div id="related-articles">
 		{% if article.next_article %}
-		<a href="/{{ article.next_article.url}}" id="next-neighbour">&laquo; {{ article.next_article.title | striptags }}</a>
+		<a href="/{{ article.next_article.url}}" id="next-neighbour">
+			<span id="article-next">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+					<i class="material-icons" role="presentation">navigate_before</i>
+				</button>
+			</span>
+			<span class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" for="article-next">{{ article.next_article.title | striptags }}</span>
+			<!-- &laquo; {{ article.next_article.title | striptags }} -->
+		</a>
 		{% endif %}
 		{% if article.prev_article %}
-		<a href="/{{ article.prev_article.url}}" id="prev-neighbour">{{ article.prev_article.title | striptags }} &raquo;</a>
+		<a href="/{{ article.prev_article.url}}" id="prev-neighbour">
+			<span id="article-prev">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+					<i class="material-icons" role="presentation">navigate_next</i>
+				</button>
+			</span>
+			<span class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left" for="article-prev">{{ article.prev_article.title | striptags }}</span>
+			<!-- {{ article.prev_article.title | striptags }} &raquo; -->
+		</a>
 		{% endif %}
 	</div>
 	{% endif %}

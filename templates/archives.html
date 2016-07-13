@@ -14,5 +14,15 @@
 		</ul>
 		{% endfor %}
 	</div>
-	<div id="back-to-home"><a href="/">&laquo; Back to Home</a></div>
+	<div id="back-to-home">
+		<a href="/">
+			<span id="archives-back-to-home">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+					<i class="material-icons" role="presentation">home</i>
+				</button>
+			</span>
+			<span class="mdl-tooltip mdl-tooltip--large mdl-tooltip--right" for="archives-back-to-home">Back to Home</span>
+			<!-- &laquo; Back to Home -->
+		</a>
+	</div>
 {% endblock %}

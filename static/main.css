@@ -6963,7 +6963,7 @@ a {
       a.icon:hover.fa-soundcloud {
         color: #f70; }
       a.icon:hover.fa-envelope {
-        color: #CFD8DC; }
+        color: #455A64; }
 
 ul, ol {
   margin: 1.25em 2.25em; }
@@ -6981,9 +6981,10 @@ table:not(.codehilitetable) {
   width: 100%; }
   table:not(.codehilitetable) th {
     text-align: center;
-    background-color: #333333;
-    color: #eeeeee;
-    height: 50px; }
+    background-color: #455a64;
+    color: #cfd8dc;
+    height: 50px;
+    border: 1px solid #cfd8dc; }
   table:not(.codehilitetable) td {
     text-align: left; }
   table:not(.codehilitetable) th, table:not(.codehilitetable) td {
@@ -6992,7 +6993,7 @@ table:not(.codehilitetable) {
     table:not(.codehilitetable) th:first-child, table:not(.codehilitetable) td:first-child {
       padding-left: 15px; }
     table:not(.codehilitetable) th:last-child, table:not(.codehilitetable) td:last-child {
-      padding-right: 0; }
+      margin: 0 auto; }
 
 abbr, acronym, .abbr {
   cursor: help;
@@ -7008,7 +7009,7 @@ abbr, acronym, .abbr {
 
 code {
   font-size: 0.85em;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Inconsolata", monospace;
   padding: 0.1em 0.3em;
   border-radius: 3px; }
 
@@ -7025,7 +7026,7 @@ pre {
   /* Comment (and line numbers) */ }
 
 .codehilitetable {
-  font: 0.85em/1.5 "Source Code Pro", monospace;
+  font: 0.85em/1.5 "Inconsolata", monospace;
   overflow-x: auto;
   display: block;
   border-left: 3px solid #607d8b;
@@ -7087,46 +7088,6 @@ html, body {
   position: absolute;
   padding: 25px 20px;
   margin: 0 auto; }
-
-#menu-toggle {
-  text-align: right;
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  overflow: hidden;
-  border-width: 0;
-  outline: none;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  background-color: #607d8b;
-  color: #eeeeee;
-  transition: background-color .3s; }
-  #menu-toggle:hover, #menu-toggle:focus {
-    background-color: #455a64; }
-    #menu-toggle:hover span, #menu-toggle:focus span {
-      color: #ffc107; }
-  #menu-toggle > * {
-    position: relative; }
-  #menu-toggle span {
-    display: block;
-    padding: 12px 24px;
-    color: #eeeeee; }
-  #menu-toggle:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 0;
-    padding-top: 0;
-    border-radius: 100%;
-    background-color: rgba(236, 240, 241, 0.3);
-    transform: translate(-50%, -50%); }
-  #menu-toggle:active:before {
-    width: 120%;
-    padding-top: 120%;
-    transition: width .2s ease-out, padding-top .2s ease-out; }
 
 /* Sidebar Styles */
 .sidebar-nav {
@@ -7197,10 +7158,11 @@ aside {
   display: inline-block; }
 
 #name {
-  font-size: 1.8em;
-  line-height: 1.35;
+  font-size: 1.5em;
+  line-height: 1.35em;
   letter-spacing: -0.5px;
-  color: #eeeeee; }
+  color: #eeeeee;
+  margin: 12px 0; }
 
 #bio {
   font-size: 0.85em;
@@ -7208,12 +7170,37 @@ aside {
   color: #eeeeee; }
 
 #social {
-  letter-spacing: 10px; }
+  text-align: center; }
+  #social .mdl-icon {
+    display: inline-block;
+    margin: 0 -2px; }
+  #social .icon {
+    padding: .5em;
+    background: #455a64;
+    border-radius: 50%; }
+    #social .icon:hover {
+      background: #cfd8dc;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+      transition: all .3s ease; }
   #social .bf-network:hover {
     color: #d91b5c; }
+  #social .bf-network:before {
+    position: relative;
+    bottom: 2px; }
 
 #sidebar-links {
-  color: #777777; }
+  color: #cfd8dc; }
+  #sidebar-links .mdl-button {
+    color: #cfd8dc; }
+
+#menu-toggle {
+  position: relative;
+  right: 50px; }
+  #menu-toggle span {
+    color: #cfd8dc;
+    position: relative;
+    bottom: 2px;
+    left: 2px; }
 
 #sidebar-divider {
   display: none; }
@@ -7232,15 +7219,18 @@ aside {
     margin: 25px 10px; }
 
 .summary p {
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+  width: 80%; }
 
 #view-archives {
   overflow: auto;
-  text-align: right; }
+  text-align: right;
+  padding: 10px 2px; }
 
 #back-to-home, #related-articles {
   overflow: auto;
-  margin-top: 20px; }
+  margin-top: 20px;
+  padding: 10px 2px; }
 
 #next-neighbour {
   float: left; }
@@ -7252,6 +7242,8 @@ aside {
   .container {
     padding-top: 45px;
     width: 90%; }
+  #menu-toggle {
+    right: 15px; }
   #wrapper {
     padding-left: 0; }
     #wrapper.toggled {
@@ -7277,8 +7269,6 @@ aside {
     vertical-align: middle; }
     aside div {
       margin: 5px 0; }
-  #social .icon {
-    padding: 0 1px; }
   article {
     margin-top: 14px; } }
 
@@ -7287,6 +7277,8 @@ aside {
     text-align: center;
     float: none;
     line-height: 1.25; }
+  .summary p {
+    width: 100%; }
   #sidebar-divider {
     display: block; }
   #wrapper {
@@ -7306,7 +7298,9 @@ aside {
     padding: 20px;
     position: relative;
     width: 100%;
-    left: 80%; } }
+    left: 80%; }
+  article {
+    padding: 0 2px; } }
 
 @media only print {
   footer, aside, #disqus_thread, #related-articles, #back-to-home {

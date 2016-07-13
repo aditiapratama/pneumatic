@@ -4,7 +4,7 @@ $bootstrap-sass-asset-helper: false !default;
 // --------------------------------------------------
 
 $main-font: "Raleway", sans-serif;
-$code-font: "Source Code Pro", monospace;
+$code-font: "Inconsolata", monospace;
 
 $accent-colour: #ffc107;
 $red-a100: #ff8a80;
@@ -17,7 +17,7 @@ $social-icons: (
 	"google-plus-square" #dd4b39,
 	"github" #4078c0,
 	"soundcloud" #f70,
-	"envelope" #CFD8DC
+	"envelope" #455A64
 );
 
 $desktop: "only screen and (min-width: 960px)";
