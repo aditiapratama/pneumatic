@@ -243,21 +243,40 @@ html, body {
 
 		#sidebar-wrapper {
 		  width: 25%;
+			.sidebar-nav {
+				display: block;
+				opacity: 1;
+				height: auto;
+				transition: opacity 1s ease-in;
+			}
 		}
 
 		#page-content-wrapper {
 			width: 75%;
 			left: 25%;
 		}
+
+		#menu-toggle {
+			left: 25%;
+		}
 	}
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 5;
     position: fixed;
     height: 100%;
     overflow-y: auto;
     background: $dark-primary-color;
+		width: 0;
+		transition: all 250ms ease-in-out;
+		.sidebar-nav {
+			// display: none
+			transition: opacity 1s ease-out;
+			opacity: 0;
+			height: 0;
+			overflow: hidden;
+		}
 }
 
 #page-content-wrapper {
@@ -265,16 +284,21 @@ html, body {
     position: absolute;
     padding: 25px 20px;
 		margin: 0 auto;
+		left: 0;
+		transition: all 250ms ease-in-out;
+
 }
 
 /* Sidebar Styles */
 
 .sidebar-nav {
-    position: absolute;
+    position: fixed;
     top: 50px;
     padding: 0 25px;
     list-style: none;
 		text-align: center;
+		width: 25%;
+		margin: 0 auto;
 
 		li {
 		  line-height: 40px;
@@ -416,7 +440,8 @@ aside {
 
 #menu-toggle {
 	position: relative;
-	right: 50px;
+	left: 0;
+	transition: all 250ms ease-in-out;
 	span {
 		color: $light-primary-color;
 		position: relative;
@@ -481,6 +506,7 @@ aside {
 
 	#menu-toggle {
 		right: 15px;
+		left: 50%;
 	}
 
 	#wrapper {
@@ -489,20 +515,39 @@ aside {
 			padding-left: -50%;
 
 			#sidebar-wrapper {
-					width: 0;
+				width: 0;
+				.sidebar-nav {
+					// display: none;
+					overflow: hidden;
+					opacity: 0;
+					height: 0;
+				}
 			}
 
 			#page-content-wrapper {
-					position: relative;
-					margin: 0 auto;
-					width: 90%;
-					left: 0;
+				position: relative;
+				margin: 0 auto;
+				width: 90%;
+				left: 0;
+			}
+
+			#menu-toggle {
+				left: 25px;
 			}
 		}
 	}
 
 	#sidebar-wrapper {
 			width: 50%;
+
+			.sidebar-nav {
+					width: 50%;
+					display: block;
+					overflow: visible;
+					opacity: 1;
+					height: auto;
+					transition: opacity 1s ease-out;
+			}
 	}
 
 	#page-content-wrapper {
@@ -511,6 +556,7 @@ aside {
 			width: 90%;
 			left: 50%;
 	}
+
 
 	aside {
 		max-width: 280px;
@@ -546,20 +592,31 @@ aside {
 			padding-left: -80%;
 
 			#sidebar-wrapper {
-					width: 0;
+				width: 0;
 			}
 
 			#page-content-wrapper {
-					position: relative;
-					margin: 0 auto;
-					width: 100%;
-					left: 0;
+				position: relative;
+				margin: 0 auto;
+				width: 100%;
+			}
+
+			#menu-toggle {
+				left: -10%;
 			}
 		}
 	}
 
+	#menu-toggle {
+		left: 85%;
+	}
+
 	#sidebar-wrapper {
 			width: 80%;
+
+			.sidebar-nav {
+				width: 75%;
+			}
 	}
 
 	#page-content-wrapper {
