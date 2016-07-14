@@ -187,12 +187,15 @@ pre {
 .codehilitetable {
 	font: 0.85em/1.5 $code-font;
 	overflow-x: auto;
+	position: relative;
 	display: block;
 	border-left: 3px solid $primary-color;
 	border-radius: 3px;
 	padding: 0.8em 0;
 	width: 90%;
 	margin: 0 auto;
+	bottom: 10px;
+	box-shadow: 2px 2px 2px $gray;
 
 	tbody tr { display: block; } // fixes line numbers on Firefox
 }
@@ -211,7 +214,7 @@ pre {
 }
 
 .codehilite {
-	margin: 0 1em 0 2.5em;
+	margin: 0 1em 0 3.8em;
 }
 
 .admonition {
