@@ -11,11 +11,14 @@ var uglify        = require('gulp-uglify');
 var jshint        = require('gulp-jshint');
 var rename        = require('gulp-rename');
 var minify        = require('gulp-cssnano');
+var concat        = require('gulp-concat');
 
 var config = {
   bootstrapDir: './bower_components/bootstrap-sass',
   jqueryDir: './bower_components/jquery',
-  publicDir: './static'
+  publicDir: './static',
+  momentDir: './bower_components/moment',
+  octiconsDir: './bower_components/octicons/'
 };
 
 var plumberErrorHandler = { errorHandler: notify.onError({
@@ -38,19 +41,6 @@ gulp.task('css', function() {
   .pipe(gulp.dest(config.publicDir));
 });
 
-gulp.task('octicons', function () {
-  return
-  gulp.src('./bower_components/octicons/build/font/*.{min.css,otf,eot,svg,ttf,woff,woff2}')
-    .pipe(gulp.dest(config.publicDir + '/fonts/octicons'))
-  gulp.src('./bower_components/octicons/build/font/_octicons.scss')
-    .pipe(gulp.dest(config.publicDir + '/css'));
-});
-
-gulp.task('fonts', function() {
-  return gulp.src(config.bootstrapDir + '/assets/fonts/**/*')
-  .pipe(gulp.dest(config.publicDir + '/fonts'));
-});
-
 gulp.task('pygments', function () {
   return gulp.src([config.publicDir + '/pygments/*.css', '!' + config
   .publicDir + '/pygments/*min.css'])
@@ -61,36 +51,33 @@ gulp.task('pygments', function () {
     .pipe(gulp.dest(config.publicDir + '/pygments'));
 });
 
-gulp.task('jquery', function() {
-  return gulp.src(config.jqueryDir + '/dist/jquery.min.js')
-  .pipe(gulp.dest(config.publicDir + '/js'));
+gulp.task('copy', function() {
+  gulp.src([config.jqueryDir + '/dist/jquery.min.js', config.bootstrapDir+'/assets/javascripts/bootstrap.min.js', config.momentDir + '/min/moment.min.js'])
+  .pipe(gulp.dest(config.publicDir + '/js'))
+  gulp.src(config.octiconsDir + '/build/font/*.{min.css,otf,eot,svg,ttf,woff,woff2}')
+  .pipe(gulp.dest(config.publicDir + '/fonts/octicons'))
+  gulp.src(config.octiconsDir + '/build/font/_octicons.scss')
+  .pipe(gulp.dest(config.publicDir + '/css'))
+  gulp.src(config.bootstrapDir + '/assets/fonts/**/*')
+  .pipe(gulp.dest(config.publicDir + '/fonts'));
 });
 
 
 gulp.task('js',function(){
-  return gulp.src(config.publicDir + '/js/*.js')
+  return gulp.src(config.publicDir + '/js-dev/*.js')
   .pipe(plumber(plumberErrorHandler))
   .pipe(jshint())
-  .pipe(jshint.reporter('fail'))
-  .pipe(gulp.dest(config.publicDir + '/js'));
-})
-
-
-gulp.task('compress',function(){
-  return gulp.src(config.publicDir + '/js/main.js')
-  .pipe(plumber(plumberErrorHandler))
-  .pipe(jshint())
-  .pipe(jshint.reporter('fail'))
+  .pipe(concat('main.js'))
   .pipe(uglify())
+  .pipe(jshint.reporter('fail'))
   .pipe(gulp.dest(config.publicDir + '/js'));
 })
 
 gulp.task('watch',function(){
   gulp.watch(config.publicDir + '/css/main.scss',['css']);
-  // gulp.watch(config.publicDir + '/js/*.js',['js']);
-  gulp.watch(config.publicDir + '/js/main.js',['compress']);;
+  gulp.watch(config.publicDir + '/js-dev/*.js',['js']);
 })
 
-gulp.task('serve', ['css','fonts','octicons','jquery','pygments','watch']);
+gulp.task('serve', ['css','js','copy','pygments','watch']);
 
 gulp.task('default', ['serve']);

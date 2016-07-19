@@ -6,6 +6,18 @@
 
 // Reset & Basics (Inspired by Eric Meyer)
 
+@font-face {
+  font-family:"Octicons";
+  src:url("#{$octicons-font-path}octicons.eot?9a80b0fcce5ace0475f72ac5567f9158");
+  src:url("#{$octicons-font-path}octicons.eot?#iefix") format("embedded-opentype"),
+		url("#{$octicons-font-path}octicons.woff2?9a80b0fcce5ace0475f72ac5567f9158") format("woff2"),
+		url("#{$octicons-font-path}octicons.woff?9a80b0fcce5ace0475f72ac5567f9158") format("woff"),
+		url("#{$octicons-font-path}octicons.ttf?9a80b0fcce5ace0475f72ac5567f9158") format("truetype"),
+		url("#{$octicons-font-path}octicons.svg?9a80b0fcce5ace0475f72ac5567f9158#octicons") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -128,10 +140,9 @@ table:not(.codehilitetable) {
 	width: 100%;
 	th {
 		text-align: center;
-		background-color: $dark-primary-color;
-		color: $light-primary-color;
+		color: $gray-dark;
 		height: 50px;
-		border: 1px solid $light-primary-color;
+		border-bottom: 5px solid $light-primary-color !important;
 	}
 	td {
 		text-align: left;
@@ -244,7 +255,7 @@ html, body {
     left:0;
     right:0;
     bottom:0;
-    background-color:$light-primary-color; 
+    background-color:$light-primary-color;
     z-index:99; /* makes sure it stays on top */
 }
 

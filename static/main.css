@@ -6278,8 +6278,8 @@ button.close {
 
 @font-face {
   font-family: "Octicons";
-  src: url("fonts/octicons/octicons.eot?c0c33aeb9e311df3a64b40895eb56c03");
-  src: url("fonts/octicons/octicons.eot?#iefix") format("embedded-opentype"), url("fonts/octicons/octicons.woff2?c0c33aeb9e311df3a64b40895eb56c03") format("woff2"), url("fonts/octicons/octicons.woff?c0c33aeb9e311df3a64b40895eb56c03") format("woff"), url("fonts/octicons/octicons.ttf?c0c33aeb9e311df3a64b40895eb56c03") format("truetype"), url("fonts/octicons/octicons.svg?c0c33aeb9e311df3a64b40895eb56c03#octicons") format("svg");
+  src: url("fonts/octicons/octicons.eot?9a80b0fcce5ace0475f72ac5567f9158");
+  src: url("fonts/octicons/octicons.eot?#iefix") format("embedded-opentype"), url("fonts/octicons/octicons.woff2?9a80b0fcce5ace0475f72ac5567f9158") format("woff2"), url("fonts/octicons/octicons.woff?9a80b0fcce5ace0475f72ac5567f9158") format("woff"), url("fonts/octicons/octicons.ttf?9a80b0fcce5ace0475f72ac5567f9158") format("truetype"), url("fonts/octicons/octicons.svg?9a80b0fcce5ace0475f72ac5567f9158#octicons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -6855,6 +6855,13 @@ button.close {
 .bf-creativecommons:before {
   content: "\f003"; }
 
+@font-face {
+  font-family: "Octicons";
+  src: url("fonts/octicons/octicons.eot?9a80b0fcce5ace0475f72ac5567f9158");
+  src: url("fonts/octicons/octicons.eot?#iefix") format("embedded-opentype"), url("fonts/octicons/octicons.woff2?9a80b0fcce5ace0475f72ac5567f9158") format("woff2"), url("fonts/octicons/octicons.woff?9a80b0fcce5ace0475f72ac5567f9158") format("woff"), url("fonts/octicons/octicons.ttf?9a80b0fcce5ace0475f72ac5567f9158") format("truetype"), url("fonts/octicons/octicons.svg?9a80b0fcce5ace0475f72ac5567f9158#octicons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 html, body, div, span, applet, object, iframe, h1, h2, .admonition-title, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -6981,10 +6988,9 @@ table:not(.codehilitetable) {
   width: 100%; }
   table:not(.codehilitetable) th {
     text-align: center;
-    background-color: #455a64;
-    color: #cfd8dc;
+    color: #333333;
     height: 50px;
-    border: 1px solid #cfd8dc; }
+    border-bottom: 5px solid #cfd8dc !important; }
   table:not(.codehilitetable) td {
     text-align: left; }
   table:not(.codehilitetable) th, table:not(.codehilitetable) td {
@@ -7077,7 +7083,6 @@ html, body {
   right: 0;
   bottom: 0;
   background-color: #cfd8dc;
-  /* change if the mask should have another color then white */
   z-index: 99;
   /* makes sure it stays on top */ }
 
