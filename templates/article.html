@@ -20,9 +20,8 @@
 	<h1 class="title"><a href="/{{ article.url }}" title="Permalink to {{ article.title | striptags }}">{{ article.title }}</a></h1>
 	<time class="date" datetime="{{ article.date }}">
 		{% if article.locale_modified and article.modified %}
-		Updated
-		<time class="timeago" datetime="{{ article.modified }}"> {{ article._locale_modified}} </time>
-		{% endif %} |
+		Updated <time class="timeago" datetime="{{ article.modified }}"> {{ article._locale_modified}} </time> |
+		{% endif %}
 		{{ article.locale_date }}
 	</time>
 	<div class="content">
