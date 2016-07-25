@@ -7403,12 +7403,12 @@ aside {
         position: absolute;
         left: 5%; }
       #wrapper.toggled .right-menu {
+        display: inline-block;
+        position: absolute;
         right: 5%; }
   #menu-toggle {
     left: 85%; }
   .right-menu {
-    display: block;
-    position: absolute;
     right: 85%; }
   #sidebar-wrapper {
     width: 80%; }

@@ -696,6 +696,8 @@ aside {
         left: 5%;
 			}
       .right-menu {
+        display: inline-block;
+        position: absolute;
         right: 5%;
       }
 		}
@@ -706,8 +708,6 @@ aside {
 	}
 
   .right-menu {
-    display: block;
-    position: absolute;
     right: 85%;
   }
 
