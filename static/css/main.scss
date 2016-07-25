@@ -692,12 +692,12 @@ aside {
 			}
 
 			#menu-toggle {
-				position: absolute;
-        left: 5%;
+				position: relative;
+        margin-left: -65px;
 			}
       .right-menu {
         display: inline-block;
-        position: absolute;
+        position: relative;
         right: 5%;
       }
 		}
