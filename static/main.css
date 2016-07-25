@@ -7138,6 +7138,9 @@ html, body {
   transition: all 250ms ease-in-out; }
 
 /* Sidebar Styles */
+.mdl-layout__header {
+  display: none; }
+
 .sidebar-nav {
   position: fixed;
   top: 50px;
@@ -7212,12 +7215,14 @@ aside {
   line-height: 1.35em;
   letter-spacing: -0.5px;
   color: #eeeeee;
-  margin: 12px 0; }
+  margin: 12px 0;
+  text-shadow: 2px 2px #333333; }
 
 #bio {
   font-size: 0.85em;
   line-height: 1.5;
-  color: #eeeeee; }
+  color: #eeeeee;
+  text-shadow: 2px 2px #333333; }
 
 #social {
   text-align: center; }
@@ -7227,11 +7232,13 @@ aside {
   #social .icon {
     padding: .5em;
     background: #455a64;
-    border-radius: 50%; }
+    border-radius: 50%;
+    text-shadow: 2px 2px #333333; }
     #social .icon:hover {
       background: #cfd8dc;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-      transition: all .3s ease; }
+      transition: all .3s ease;
+      text-shadow: none; }
   #social .bf-network:hover {
     color: #d91b5c; }
   #social .bf-network:before {
@@ -7240,6 +7247,35 @@ aside {
 
 #sidebar-links {
   color: #cfd8dc; }
+  #sidebar-links ul {
+    list-style: none;
+    text-transform: uppercase;
+    font-family: "Inconsolata", monospace, monospace;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px; }
+  #sidebar-links li {
+    text-align: left;
+    letter-spacing: .3em;
+    text-shadow: 2px 2px #333333; }
+    #sidebar-links li:hover {
+      text-shadow: none; }
+  #sidebar-links .mdl-custom {
+    float: left;
+    width: 100%;
+    height: 50px; }
+    #sidebar-links .mdl-custom a {
+      display: block;
+      background: transparent;
+      border-radius: 2px;
+      padding: 0 15px; }
+      #sidebar-links .mdl-custom a:hover {
+        background: #cfd8dc;
+        color: #455a64;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        transition: all .3s ease-in-out; }
   #sidebar-links .mdl-button {
     color: #cfd8dc; }
 
@@ -7296,6 +7332,8 @@ aside {
   #menu-toggle {
     right: 15px;
     left: 50%; }
+  .right-menu {
+    display: none; }
   #wrapper {
     padding-left: 0; }
     #wrapper.toggled {
@@ -7342,10 +7380,15 @@ aside {
     text-align: center;
     float: none;
     line-height: 1.25; }
+  h2, .admonition-title {
+    text-align: center;
+    float: left; }
   .summary p {
     width: 100%; }
   #sidebar-divider {
     display: block; }
+  #sidebar-links {
+    display: none; }
   #wrapper {
     padding-left: 0; }
     #wrapper.toggled {
@@ -7357,9 +7400,16 @@ aside {
         margin: 0 auto;
         width: 100%; }
       #wrapper.toggled #menu-toggle {
-        left: -10%; }
+        position: absolute;
+        left: 5%; }
+      #wrapper.toggled .right-menu {
+        right: 5%; }
   #menu-toggle {
     left: 85%; }
+  .right-menu {
+    display: block;
+    position: absolute;
+    right: 85%; }
   #sidebar-wrapper {
     width: 80%; }
     #sidebar-wrapper .sidebar-nav {

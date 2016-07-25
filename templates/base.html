@@ -69,45 +69,70 @@
 					<div id="name"><a href="/">{{ SITENAME }}</a></div>
 					<div id="bio">{{ BIO_TEXT }}</div>
 
+					{% if SIDEBAR_LINKS %}
+						<div id="sidebar-links">
+							<ul>
+								{% for link, title, icon in SIDEBAR_LINKS %}
+									<li>
+										<span class="mdl-custom">
+											<a href="{{ link }}">
+												<i class="{{ icon }}"></i> {{ title }}
+											</a>
+										</span>
+									</li>
+								<!-- {{ SIDEBAR_LINKS | join("&nbsp;&nbsp;|&nbsp;&nbsp;") }} -->
+								{% endfor%}
+							</ul>
+						</div>
+					{% endif %}
+
 					{% if SOCIAL_ICONS %}
 
 					<div id="social">
 					{% for link, title, icon in SOCIAL_ICONS %}
 						<div id="{{ icon }}" class="mdl-icon">
-							<div class="mdl-tooltip" for="{{ icon }}">{{ title }}</div>
+							<div class="mdl-tooltip mdl-tooltip--top" for="{{ icon }}">{{ title }}</div>
 							<a href="{{ link }}" class="icon fa {{ icon }}"></a>
 						</div>
 						{% endfor %}
 						<div id="bf-network" class="mdl-icon">
-							<div class="mdl-tooltip" for="bf-network">Blender Network</div>
+							<div class="mdl-tooltip mdl-tooltip--top" for="bf-network">Blender Network</div>
 							<a href="https://www.blendernetwork.org/aditia-pratama" class="icon bf-network"></a>
 						</div>
 					</div>
 
 					{% endif %}
-
-					{% if SIDEBAR_LINKS %}
-					<div id="sidebar-links">
-							{{ SIDEBAR_LINKS | join("&nbsp;&nbsp;|&nbsp;&nbsp;") }}
-					</div>
-					{% endif %}
-
 					<hr id="sidebar-divider">
 				</li>
 			</ul>
 		</div>
 
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-			<div class="mdl-layout__header">
+			<div class="mdl-layout__header mdl-layout__header">
 				<div class="mdl-layout__header-row">
 					<!-- <div class="mdl-layout-spacer"></div> -->
 					<div id="menu-toggle">
-						<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggle-sidebar">
-  						<input type="checkbox" id="toggle-sidebar" class="mdl-switch__input">
-  							<span class="mdl-switch__label"></span>
-						</label>
+						<button id="toggle-sidebar" class="mdl-button mdl-js-button mdl-button--icon">
+  						<i class="material-icons">menu</i>
+						</button>
 					</div>
 					<div class="mdl-layout-spacer"></div>
+					{% if SIDEBAR_LINKS %}
+					<div class="right-menu">
+						<button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+  						<i class="material-icons">more_vert</i>
+						</button>
+						<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+							{% for link, title, icon in SIDEBAR_LINKS %}
+								<li class="mdl-menu__item">
+									<a href="{{ link }}">
+										<i class="{{ icon }}"></i> {{ title }}
+									</a>
+								</li>
+							{% endfor%}
+						</ul>
+					</div>
+					{% endif%}
 				</div>
 			</div>
 

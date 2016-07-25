@@ -325,7 +325,9 @@ html, body {
 }
 
 /* Sidebar Styles */
-
+.mdl-layout__header {
+  display: none;
+}
 .sidebar-nav {
     position: fixed;
     top: 50px;
@@ -430,12 +432,14 @@ aside {
 	letter-spacing: -0.5px;
 	color: $gray-lighter;
 	margin: 12px 0;
+  text-shadow: 2px 2px $gray-dark;
 }
 
 #bio {
 	font-size: 0.85em;
 	line-height: 1.5;
-	color: $gray-lighter
+	color: $gray-lighter;
+  text-shadow: 2px 2px $gray-dark;
 }
 
 #social {
@@ -449,10 +453,12 @@ aside {
 		padding: .5em;
 		background: $dark-primary-color;
 		border-radius: 50%;
+    text-shadow: 2px 2px $gray-dark;
 		&:hover {
 			background: $light-primary-color;
 			box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
 			transition: all .3s ease;
+      text-shadow: none;
 		}
 	}
 	.bf-network {
@@ -468,6 +474,43 @@ aside {
 
 #sidebar-links {
 	color: $light-primary-color;
+  ul {
+    list-style: none;
+    text-transform: uppercase;
+    font-family: $code-font, monospace;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  li {
+    text-align: left;
+    letter-spacing: .3em;
+    text-shadow: 2px 2px $gray-dark;
+    &:hover {
+      text-shadow: none;
+    }
+  }
+
+  .mdl-custom {
+    float: left;
+    width: 100%;
+    height: 50px;
+    a {
+      display: block;
+      background: transparent;
+      border-radius: 2px;
+      padding: 0 15px;
+      &:hover{
+        background: $light-primary-color;
+        color: $dark-primary-color;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
 	.mdl-button {
 		color: $light-primary-color;
 	}
@@ -544,6 +587,10 @@ aside {
 		left: 50%;
 	}
 
+  .right-menu {
+    display: none;
+  }
+
 	#wrapper {
 		padding-left: 0;
 		&.toggled {
@@ -615,11 +662,19 @@ aside {
 		line-height: 1.25;
 	}
 
+  h2 {
+    text-align: center;
+    float: left;
+  }
+
 	.summary p {
 		width: 100%;
 	}
 
 	#sidebar-divider { display: block; }
+  #sidebar-links {
+    display: none;
+  }
 
 	#wrapper {
 		padding-left: 0;
@@ -637,14 +692,24 @@ aside {
 			}
 
 			#menu-toggle {
-				left: -10%;
+				position: absolute;
+        left: 5%;
 			}
+      .right-menu {
+        right: 5%;
+      }
 		}
 	}
 
 	#menu-toggle {
 		left: 85%;
 	}
+
+  .right-menu {
+    display: block;
+    position: absolute;
+    right: 85%;
+  }
 
 	#sidebar-wrapper {
 			width: 80%;
